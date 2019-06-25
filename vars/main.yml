@@ -1,0 +1,4 @@
+---
+# vars file for guestline-demo
+remote_user: ubuntu            
+action_user: ubuntu

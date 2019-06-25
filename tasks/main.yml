@@ -1,0 +1,20 @@
+---
+  - name: example copying file with owner and permissions
+    copy:
+       src: /home/guestline-demo/files/deploy.sh
+       dest: /home/ubuntu/
+
+  - name: Execute the script
+    command: sh /home/ubuntu/deploy.sh
+    ignore_errors: yes
+
+  - name: Get updated files from git repository 
+    git:
+            repo: https://{{ githubuser | urlencode }}:{{ githubpassword | urlencode }}@git.asticsinc.com/Demo/Project-basic-structure-nodejs.git
+            dest: /home/ubuntu/Project-basic-structure-nodejs
+            version: development
+            
+ 
+  
+ 
+            
